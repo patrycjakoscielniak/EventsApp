@@ -12,6 +12,7 @@ import java.time.LocalDate;
 public class Registration {
     Long id;
     Event event;
+    Participant participant;
     LocalDate registrationDate;
 
     @Override

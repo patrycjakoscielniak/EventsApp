@@ -19,6 +19,9 @@ public class RegistrationEntity {
     @ManyToOne
     @JoinColumn(name = "event_id")
     EventEntity event;
+    @ManyToOne
+    @JoinColumn(name = "participant_id")
+    ParticipantEntity participant;
     LocalDate registrationDate;
 
     @Override
