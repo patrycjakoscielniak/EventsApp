@@ -11,9 +11,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Event {
     private Long id;
-    public String eventName;
-    public String eventDescription;
-    public LocalDate eventDate;
-    public int eventCapacity;
-
+    private String eventName;
+    private String eventDescription;
+    private LocalDate eventDate;
+    private int eventCapacity;
+    private Location eventLocation;
 }
