@@ -21,14 +21,4 @@ public class LocationEntity {
     @NotNull
     String city;
     String address;
-
-    @Override
-    public String toString() {
-        return "Location{" +
-                "address='" + address + '\'' +
-                ", id=" + id +
-                ", name='" + locationName + '\'' +
-                ", city='" + city + '\'' +
-                '}';
-    }
 }
