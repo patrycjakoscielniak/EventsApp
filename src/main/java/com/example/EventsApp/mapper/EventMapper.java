@@ -8,32 +8,24 @@ import com.example.EventsApp.entity.LocationEntity;
 public class EventMapper {
 
     public static EventEntity toEntity(Event event) {
-        Location location = event.getEventLocation();
+        LocationEntity locationEntity = LocationMapper.toEntity(event.getEventLocation());
         return new EventEntity(
                 event.getId(),
                 event.getEventName(),
                 event.getEventDescription(),
                 event.getEventDate(),
                 event.getEventCapacity(),
-                new LocationEntity(
-                        location.getId(),
-                        location.getLocationName(),
-                        location.getCity(),
-                        location.getAddress()));
+                locationEntity);
     }
 
     public static Event toDto(EventEntity entity) {
-        LocationEntity location = entity.getEventLocation();
+        Location location = LocationMapper.toDto(entity.getEventLocation());
         return new Event(
                 entity.getId(),
                 entity.getEventName(),
                 entity.getEventDescription(),
                 entity.getEventDate(),
                 entity.getEventCapacity(),
-                new Location(
-                        location.getId(),
-                        location.getLocationName(),
-                        location.getCity(),
-                        location.getAddress()));
+                location);
     }
 }
