@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Data
 @Entity
@@ -34,6 +35,8 @@ public class EventEntity {
     @ManyToOne
     @JoinColumn(name = "location_id")
     LocationEntity eventLocation;
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+    Set<RegistrationEntity> registrations;
 
     @Override
     public String toString() {
